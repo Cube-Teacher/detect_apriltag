@@ -24,18 +24,37 @@ while (1):
     results1 = detector1.detect(gray)
     #print(results1)
     for tag in results1:
-        cv2.circle(image, tuple(tag.corners[0].astype(int)), 4,(0,0,255), 2) # right-bottom
-        cv2.circle(image,tuple(tag.corners[1].astype(int)), 4,(0,0,255), 2) # left-top
-        cv2.circle(image, tuple(tag.corners[2].astype(int)), 4,(0,0,255), 2) # right-top
-        cv2.circle(image, tuple(tag.corners[3].astype(int)), 4,(0,0,255), 2) # left-bottom
-        if tag.tag_id==0:
-            tag36h11_tag0=tag36h11_tag0+1
-        if tag.tag_id==1:
-            tag36h11_tag1=tag36h11_tag1+1
-        if tag.tag_id==24:
-            tag36h11_tag24=tag36h11_tag24+1
-        if tag.tag_id==25:
-            tag36h11_tag25=tag36h11_tag25+1
+        if(tag.tag_id==0):
+            cv2.circle(image, tuple(tag.corners[0].astype(int)), 4,(255,255,255), 2)
+            cv2.circle(image, tuple(tag.corners[1].astype(int)), 4,(255,255,255), 2)
+            cv2.circle(image, tuple(tag.corners[2].astype(int)), 4,(255,255,255), 2)
+            cv2.circle(image, tuple(tag.corners[3].astype(int)), 4,(255,255,255), 2)
+        if(tag.tag_id==1):
+            cv2.circle(image, tuple(tag.corners[0].astype(int)), 4,(225,105,65), 2)
+            cv2.circle(image, tuple(tag.corners[1].astype(int)), 4,(225,105,65), 2)
+            cv2.circle(image, tuple(tag.corners[2].astype(int)), 4,(225,105,65), 2)
+            cv2.circle(image, tuple(tag.corners[3].astype(int)), 4,(225,105,65), 2)
+        if(tag.tag_id==2):
+            cv2.circle(image, tuple(tag.corners[0].astype(int)), 4,(18,153,255), 2)
+            cv2.circle(image, tuple(tag.corners[1].astype(int)), 4,(18,153,255), 2)
+            cv2.circle(image, tuple(tag.corners[2].astype(int)), 4,(18,153,255), 2)
+            cv2.circle(image, tuple(tag.corners[3].astype(int)), 4,(18,153,255), 2)
+        if(tag.tag_id==3):
+            cv2.circle(image, tuple(tag.corners[0].astype(int)), 4,(0,255,127), 2)
+            cv2.circle(image, tuple(tag.corners[1].astype(int)), 4,(0,255,127), 2)
+            cv2.circle(image, tuple(tag.corners[2].astype(int)), 4,(0,255,127), 2)
+            cv2.circle(image, tuple(tag.corners[3].astype(int)), 4,(0,255,127), 2)
+        if(tag.tag_id==4):
+            cv2.circle(image, tuple(tag.corners[0].astype(int)), 4,(0,0,255), 2)
+            cv2.circle(image, tuple(tag.corners[1].astype(int)), 4,(0,0,255), 2)
+            cv2.circle(image, tuple(tag.corners[2].astype(int)), 4,(0,0,255), 2)
+            cv2.circle(image, tuple(tag.corners[3].astype(int)), 4,(0,0,255), 2)
+        if(tag.tag_id==5):
+            cv2.circle(image, tuple(tag.corners[0].astype(int)), 4,(0,255,255), 2)
+            cv2.circle(image, tuple(tag.corners[1].astype(int)), 4,(0,255,255), 2)
+            cv2.circle(image, tuple(tag.corners[2].astype(int)), 4,(0,255,255), 2)
+            cv2.circle(image, tuple(tag.corners[3].astype(int)), 4,(0,255,255), 2)
+        
         #print(tag.tag_id)
     
     #results2 = detector2.detect(gray)
@@ -57,11 +76,11 @@ while (1):
 
     cv2.imshow('camera', image)
     cv2.waitKey(1)
-    print('tag0:',tag36h11_tag0,'\n')
-    print('tag1:',tag36h11_tag1,'\n')
-    print('tag24:',tag36h11_tag24,'\n')
-    print('tag25:',tag36h11_tag25,'\n')
-    print('\n')
+    #print('tag0:',tag36h11_tag0,'\n')
+    #print('tag1:',tag36h11_tag1,'\n')
+    #print('tag24:',tag36h11_tag24,'\n')
+    #print('tag25:',tag36h11_tag25,'\n')
+    #print('\n')
     #time.sleep(1.0)
     
 cap.release()
